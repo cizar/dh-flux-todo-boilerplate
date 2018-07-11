@@ -2,15 +2,30 @@ import React, { Component } from 'react'
 import NewTodo from './NewTodo'
 import TodoList from './TodoList'
 
+import todoStore from '../../stores/todoStore'
+
 import 'todomvc-app-css/index.css'
+
+import dispatcher from '../../dispatcher'
+
 
 class TodoApp extends Component {
   state = {
-    draft: '',
-    todos: []
+    draft: todoStore.getDraft(),
+    todos: todoStore.getTodos()
+  }
+  handleCambio = () => {
+    this.setState({
+      todos: todoStore.getTodos(),
+      draft: todoStore.getDraft()
+    })
+  }
+  componentDidMount () {
+    todoStore.addChangeListener(this.handleCambio)
   }
   handleDraftChange = draft => {
-    this.setState({
+    dispatcher.dispatch({
+      actionType: 'DRAFT_CHANGE',
       draft
     })
   }
@@ -21,10 +36,10 @@ class TodoApp extends Component {
         title,
         id: Date.now()
       }
-      this.setState(state => ({
-        draft: '',
-        todos: [...state.todos, newTodo]
-      }))
+      dispatcher.dispatch({
+        actionType: 'ADD_TODO',
+        newTodo
+      })
     }
   }
   render () {

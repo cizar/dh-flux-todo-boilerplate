@@ -10,7 +10,13 @@ const NewTodo = ({ draft, onDraftChange, onAddTodo }) => {
   }
   return (
     <form onSubmit={handleSubmit}>
-      <input type="text" autoFocus className="new-todo" value={draft} onChange={handleChange}/>
+      <input
+        type="text"
+        autoFocus
+        className="new-todo"
+        value={draft}
+        onChange={handleChange}
+      />
     </form>
   )
 }
