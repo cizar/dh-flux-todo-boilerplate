@@ -1,0 +1,29 @@
+{
+  "name": "dh-flux-todo-boilerplate",
+  "version": "0.1.0",
+  "description": "TodoApp boilerplate para la clase de DigitalHouse sobre Flux",
+  "main": "index.js",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "dependencies": {
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-scripts": "1.1.4",
+    "todomvc-app-css": "^2.1.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cizar/dh-flux-todo-boilerplate.git"
+  },
+  "keywords": [],
+  "author": "Cesar Kastli",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cizar/dh-flux-todo-boilerplate/issues"
+  },
+  "homepage": "https://github.com/cizar/dh-flux-todo-boilerplate#readme"
+}
